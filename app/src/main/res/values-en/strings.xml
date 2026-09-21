@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">CantForgetApp</string>
+
+    <string name="title_tomorrow">For tomorrow</string>
+    <string name="subtitle_tasks">Shopping and things to do</string>
+
+    <string name="buy">Buy</string>
+    <string name="do_tasks">To do</string>
+
+    <string name="no_shopping_items">No shopping items added.</string>
+    <string name="no_tasks">No tasks added.</string>
+
+    <string name="clear_completed">Clear completed</string>
+    <string name="add_for_tomorrow">Add for tomorrow</string>
+
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="what_to_remember">What do you need to remember?</string>
+    <string name="type">Type</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+</resources>

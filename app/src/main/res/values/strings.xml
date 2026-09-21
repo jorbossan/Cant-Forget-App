@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">CantForgetApp</string>
+
+    <string name="title_tomorrow">Para mañana</string>
+    <string name="subtitle_tasks">Compras y cosas por hacer</string>
+
+    <string name="buy">Comprar</string>
+    <string name="do_tasks">Hacer</string>
+
+    <string name="no_shopping_items">No hay compras apuntadas.</string>
+    <string name="no_tasks">No hay tareas apuntadas.</string>
+
+    <string name="clear_completed">Borrar completadas</string>
+    <string name="add_for_tomorrow">Añadir para mañana</string>
+
+    <string name="edit">Editar</string>
+    <string name="delete">Borrar</string>
+    <string name="what_to_remember">¿Qué hay que recordar?</string>
+    <string name="type">Tipo</string>
+    <string name="save">Guardar</string>
+    <string name="cancel">Cancelar</string>
 </resources>

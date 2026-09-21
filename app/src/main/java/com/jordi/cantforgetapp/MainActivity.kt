@@ -12,6 +12,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
@@ -77,12 +78,12 @@ fun AppRecordatorios(context: Context) {
                     Column {
 
                         Text(
-                            text = "Para mañana",
+                            text = stringResource(R.string.title_tomorrow),
                             fontWeight = FontWeight.Bold
                         )
 
                         Text(
-                            text = "Compras y cosas por hacer",
+                            text = stringResource(R.string.subtitle_tasks),
                             style = MaterialTheme.typography.bodySmall
                         )
                     }
@@ -119,7 +120,9 @@ fun AppRecordatorios(context: Context) {
         ) {
 
             item {
-                TituloSeccion("Comprar")
+                TituloSeccion(
+                    stringResource(R.string.buy)
+                )
             }
 
             val compras = tareas.filter {
@@ -130,7 +133,7 @@ fun AppRecordatorios(context: Context) {
 
                 item {
                     MensajeVacio(
-                        "No hay compras apuntadas."
+                        stringResource(R.string.no_shopping_items)
                     )
                 }
 
@@ -157,7 +160,6 @@ fun AppRecordatorios(context: Context) {
                                         )
 
                                     } else {
-
                                         it
                                     }
                                 }
@@ -186,7 +188,9 @@ fun AppRecordatorios(context: Context) {
                     modifier = Modifier.height(10.dp)
                 )
 
-                TituloSeccion("Hacer")
+                TituloSeccion(
+                    stringResource(R.string.do_tasks)
+                )
             }
 
             val cosasHacer = tareas.filter {
@@ -198,7 +202,7 @@ fun AppRecordatorios(context: Context) {
                 item {
 
                     MensajeVacio(
-                        "No hay tareas apuntadas."
+                        stringResource(R.string.no_tasks)
                     )
                 }
 
@@ -225,7 +229,6 @@ fun AppRecordatorios(context: Context) {
                                         )
 
                                     } else {
-
                                         it
                                     }
                                 }
@@ -266,7 +269,9 @@ fun AppRecordatorios(context: Context) {
                         }
 
                     ) {
-                        Text("Borrar completadas")
+                        Text(
+                            stringResource(R.string.clear_completed)
+                        )
                     }
                 }
             }
@@ -277,7 +282,7 @@ fun AppRecordatorios(context: Context) {
 
         DialogoTarea(
 
-            titulo = "Añadir para mañana",
+            titulo = stringResource(R.string.add_for_tomorrow),
 
             textoInicial = "",
 
@@ -316,7 +321,7 @@ fun AppRecordatorios(context: Context) {
 
         DialogoTarea(
 
-            titulo = "Editar",
+            titulo = stringResource(R.string.edit),
 
             textoInicial = tarea.texto,
 
@@ -341,7 +346,6 @@ fun AppRecordatorios(context: Context) {
                                 )
 
                             } else {
-
                                 it
                             }
                         }
@@ -439,13 +443,17 @@ fun TarjetaTarea(
                 TextButton(
                     onClick = onEditar
                 ) {
-                    Text("Editar")
+                    Text(
+                        stringResource(R.string.edit)
+                    )
                 }
 
                 TextButton(
                     onClick = onBorrar
                 ) {
-                    Text("Borrar")
+                    Text(
+                        stringResource(R.string.delete)
+                    )
                 }
             }
         }
@@ -491,7 +499,9 @@ fun DialogoTarea(
                     },
 
                     label = {
-                        Text("¿Qué hay que recordar?")
+                        Text(
+                            stringResource(R.string.what_to_remember)
+                        )
                     },
 
                     modifier = Modifier.fillMaxWidth(),
@@ -500,7 +510,7 @@ fun DialogoTarea(
                 )
 
                 Text(
-                    text = "Tipo",
+                    text = stringResource(R.string.type),
                     fontWeight = FontWeight.SemiBold
                 )
 
@@ -515,7 +525,9 @@ fun DialogoTarea(
                         }
                     )
 
-                    Text("Hacer")
+                    Text(
+                        stringResource(R.string.do_tasks)
+                    )
 
                     Spacer(
                         modifier = Modifier.width(20.dp)
@@ -528,7 +540,9 @@ fun DialogoTarea(
                         }
                     )
 
-                    Text("Comprar")
+                    Text(
+                        stringResource(R.string.buy)
+                    )
                 }
             }
         },
@@ -547,7 +561,9 @@ fun DialogoTarea(
                 enabled = texto.isNotBlank()
 
             ) {
-                Text("Guardar")
+                Text(
+                    stringResource(R.string.save)
+                )
             }
         },
 
@@ -556,7 +572,9 @@ fun DialogoTarea(
             TextButton(
                 onClick = onCancelar
             ) {
-                Text("Cancelar")
+                Text(
+                    stringResource(R.string.cancel)
+                )
             }
         }
     )
@@ -575,25 +593,10 @@ fun guardarTareas(
 
             JSONObject().apply {
 
-                put(
-                    "id",
-                    tarea.id
-                )
-
-                put(
-                    "texto",
-                    tarea.texto
-                )
-
-                put(
-                    "tipo",
-                    tarea.tipo.name
-                )
-
-                put(
-                    "completada",
-                    tarea.completada
-                )
+                put("id", tarea.id)
+                put("texto", tarea.texto)
+                put("tipo", tarea.tipo.name)
+                put("completada", tarea.completada)
             }
         )
     }
@@ -616,7 +619,6 @@ fun cargarTareas(
 ): List<Tarea> {
 
     val textoGuardado =
-
         context
             .getSharedPreferences(
                 "cant_forget_tasks",
@@ -626,7 +628,6 @@ fun cargarTareas(
                 "tareas",
                 null
             )
-
             ?: return emptyList()
 
     return try {
@@ -667,7 +668,6 @@ fun cargarTareas(
         }
 
     } catch (_: Exception) {
-
         emptyList()
     }
 }
