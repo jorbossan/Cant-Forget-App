@@ -4,7 +4,18 @@
 
 A lightweight personal task manager designed for Android, focused on practicality, speed, and low resource usage. The app avoids unnecessary visual elements and background features, keeping storage requirements minimal and making it suitable for a wide range of Android devices. Compatible with **Android 7.0 (API 24) and later**.
 
+
+
+<img width="293" height="394" alt="Screenshot_20260921_195016" src="https://github.com/user-attachments/assets/35fccea2-286f-4d40-ad68-3a0f48fe555b" />
+
+<img width="293" height="394" alt="Screenshot 2026-09-21 175326" src="https://github.com/user-attachments/assets/1d13ca44-d79c-46ba-a36c-c1674400202c" />
+
+
+
+
+
 ## Features
+
 
 - Create daily tasks
 - Create shopping items
