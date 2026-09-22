@@ -8,8 +8,6 @@ A lightweight personal task manager designed for Android, focused on practicalit
 
 <img width="293" height="394" alt="Screenshot_20260921_195016" src="https://github.com/user-attachments/assets/35fccea2-286f-4d40-ad68-3a0f48fe555b" />
 
-<img width="293" height="394" alt="Screenshot 2026-09-21 175326" src="https://github.com/user-attachments/assets/1d13ca44-d79c-46ba-a36c-c1674400202c" />
-
 
 
 
